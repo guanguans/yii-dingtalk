@@ -1,11 +1,12 @@
 {
     "name": "guanguans/yii-dingtalk",
-    "description": "A PHP package template repository. - 一个PHP软件包模板存储库。",
+    "description": "Based on `mingyoung/dingtalk` developed a DingTalk expansion package adapted to Yii. - 基于 `mingyoung/dingtalk` 开发的适配于 Yii 的钉钉扩展包",
     "keywords": [
-        "package",
-        "template",
-        "PHP",
-        "skeleton"
+        "yii",
+        "yii2",
+        "dingtalk-sdk",
+        "dingtalk",
+        "sdk"
     ],
     "homepage": "https://github.com/guanguans/yii-dingtalk",
     "support": {
