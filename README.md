@@ -56,7 +56,7 @@ Add to the components of the Yii2 configuration file `config/main.php`:
          *【选填】第三方网站 OAuth 授权
          * 如果你用到扫码登录、钉钉内免登和密码登录第三方网站，需要配置该项
          */
-        'oauth' => [
+        'oauths' => [
             /*
             |-------------------------------------------
             | `app-01` 为你自定义的名称，不要重复即可
@@ -90,9 +90,10 @@ Add to the components of the Yii2 configuration file `config/main.php`:
 
 ## Usage(Please refer to [mingyoung/dingtalk](https://github.com/mingyoung/dingtalk))
 
-Get an instance of `EasyDingTalk\Application`:
+Get an instance:
 
 ``` php
+// \EasyDingTalk\Application
 Yii::$app->dingtalk->app;
 Yii::$app->dingtalk->getApp();
 // Override the options in the configuration
@@ -101,6 +102,54 @@ Yii::$app->dingtalk->getApp([
     'app_key' => 'dingwu33fo1fjc0fszad',
     'app_secret' => 'RsuMFgEIY3jg5UMidkvwpzEobWjf9Fcu3oLqLyCUIgzULm54WcV7j9fi3fJlUshk',
 ]);
+
+// \EasyDingTalk\Auth\SsoClient
+Yii::$app->dingtalk->getSso();
+
+// \EasyDingTalk\Auth\OAuthClient
+Yii::$app->dingtalk->getOauth();
+
+// \EasyDingTalk\User\Client
+Yii::$app->dingtalk->getUser();
+
+// \EasyDingTalk\Department\Client
+Yii::$app->dingtalk->getDepartment();
+
+// \EasyDingTalk\Process\Client
+Yii::$app->dingtalk->getProcess();
+
+// \EasyDingTalk\Role\Client
+Yii::$app->dingtalk->getRole();
+
+// \EasyDingTalk\Contact\Client
+Yii::$app->dingtalk->getContact();
+
+// \EasyDingTalk\Calendar\Client
+Yii::$app->dingtalk->getCalendar();
+
+// \EasyDingTalk\Attendance\Client
+Yii::$app->dingtalk->getAttendance();
+
+// \EasyDingTalk\Attendance\Client
+Yii::$app->dingtalk->getCheckin();
+
+// \EasyDingTalk\Report\Client
+Yii::$app->dingtalk->getReport();
+
+// \EasyDingTalk\Blackboard\Client
+Yii::$app->dingtalk->getBlackboard();
+
+// \EasyDingTalk\Microapp\Client
+Yii::$app->dingtalk->getMicroapp();
+
+// \EasyDingTalk\Health\Client
+Yii::$app->dingtalk->getHealth();
+
+// \EasyDingTalk\Health\Client
+Yii::$app->dingtalk->getCallback();
+
+// \EasyDingTalk\Kernel\Server
+Yii::$app->dingtalk->getServer();
 ```
 
 ## Testing
