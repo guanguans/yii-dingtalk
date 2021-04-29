@@ -49,7 +49,7 @@ class DingTalk extends Component
     /**
      * @var array
      */
-    public $oauth = [];
+    public $oauths = [];
 
     /**
      * @var array
@@ -155,7 +155,7 @@ class DingTalk extends Component
             'token' => $this->token,
             'aes_key' => $this->aes_key,
             'sso_secret' => $this->sso_secret,
-            'oauth' => $this->oauth,
+            'oauth' => $this->oauths,
         ];
     }
 
