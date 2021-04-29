@@ -148,7 +148,15 @@ class DingTalk extends Component
     {
         parent::init();
 
-        $this->setOptions();
+        $this->setOptions([
+            'corp_id' => $this->corp_id,
+            'app_key' => $this->app_key,
+            'app_secret' => $this->app_secret,
+            'token' => $this->token,
+            'aes_key' => $this->aes_key,
+            'sso_secret' => $this->sso_secret,
+            'oauth' => $this->oauths,
+        ]);
     }
 
     /**
@@ -156,19 +164,11 @@ class DingTalk extends Component
      *
      * @throws \yii\base\InvalidConfigException
      */
-    public function setOptions(array $options = [])
+    public function setOptions(array $options)
     {
-        $this->options = array_merge([
-            'corp_id' => $this->corp_id,
-            'app_key' => $this->app_key,
-            'app_secret' => $this->app_secret,
-            'token' => $this->token,
-            'aes_key' => $this->aes_key,
-            'sso_secret' => $this->sso_secret,
-            'oauths' => $this->oauths,
-        ], $options);
+        $options && $this->options = array_merge($this->options, $options);
 
-        if (! static::$_app instanceof \EasyDingTalk\Application || $options) {
+        if ($options || ! static::$_app instanceof \EasyDingTalk\Application) {
             static::$_app = Yii::createObject(Application::class, $this->options);
         }
 
