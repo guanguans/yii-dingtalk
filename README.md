@@ -98,11 +98,6 @@ Yii::$app->dingtalk->app;
 Yii::$app->dingtalk->getApp();
 
 // Override the options in the global configuration
-Yii::$app->dingtalk->getApp([
-    'corp_id' => 'dingd3ir8195906jfo93',
-    'app_key' => 'dingwu33fo1fjc0fszad',
-    'app_secret' => 'RsuMFgEIY3jg5UMidkvwpzEobWjf9Fcu3oLqLyCUIgzULm54WcV7j9fi3fJlUshk',
-]);
 Yii::$app->dingtalk->setOptions([
     'corp_id' => 'dingd3ir8195906jfo93',
     'app_key' => 'dingwu33fo1fjc0fszad',
