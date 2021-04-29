@@ -18,9 +18,8 @@ class DingTalkTest extends TestCase
     {
         $this->assertInstanceOf(\EasyDingTalk\Application::class, Yii::$app->dingtalk->app);
         $this->assertInstanceOf(\EasyDingTalk\Application::class, Yii::$app->dingtalk->getApp());
-        $this->assertInstanceOf(\EasyDingTalk\Application::class, Yii::$app->dingtalk->getApp(['mack_key' => 'mack_value']));
+        $this->assertInstanceOf(\EasyDingTalk\Auth\SsoClient::class, Yii::$app->dingtalk->getApp('sso'));
         $this->assertTrue(Yii::$app->dingtalk->app === Yii::$app->dingtalk->getApp());
-        $this->assertTrue(Yii::$app->dingtalk->app !== Yii::$app->dingtalk->getApp(['mack_key' => 'mack_value']));
         $this->assertTrue(Yii::$app->dingtalk->app !== Yii::$app->dingtalk->setOptions(['mack_key' => 'mack_value'])->app);
     }
 

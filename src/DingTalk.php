@@ -176,174 +176,144 @@ class DingTalk extends Component
     }
 
     /**
-     * @return \EasyDingTalk\Application
+     * @param null $key
      *
-     * @throws \yii\base\InvalidConfigException
+     * @return \EasyDingTalk\Application|mixed
      */
-    public function getApp(array $options = [])
+    public function getApp($key = null)
     {
-        $this->setOptions($options);
+        if (null === $key) {
+            return static::$_app;
+        }
 
-        return static::$_app;
+        return static::$_app[$key];
     }
 
     /**
      * @return \EasyDingTalk\Auth\SsoClient
-     *
-     * @throws \yii\base\InvalidConfigException
      */
-    public function getSso(array $options = [])
+    public function getSso()
     {
-        return $this->getApp($options)->sso;
+        return $this->getApp()->sso;
     }
 
     /**
      * @return \EasyDingTalk\Auth\OAuthClient
-     *
-     * @throws \yii\base\InvalidConfigException
      */
-    public function getOauth(array $options = [])
+    public function getOauth()
     {
-        return $this->getApp($options)->oauth;
+        return $this->getApp()->oauth;
     }
 
     /**
      * @return \EasyDingTalk\User\Client
-     *
-     * @throws \yii\base\InvalidConfigException
      */
-    public function getUser(array $options = [])
+    public function getUser()
     {
-        return $this->getApp($options)->user;
+        return $this->getApp()->user;
     }
 
     /**
      * @return \EasyDingTalk\Department\Client
-     *
-     * @throws \yii\base\InvalidConfigException
      */
-    public function getDepartment(array $options = [])
+    public function getDepartment()
     {
-        return $this->getApp($options)->department;
+        return $this->getApp()->department;
     }
 
     /**
      * @return \EasyDingTalk\Process\Client
-     *
-     * @throws \yii\base\InvalidConfigException
      */
-    public function getProcess(array $options = [])
+    public function getProcess()
     {
-        return $this->getApp($options)->process;
+        return $this->getApp()->process;
     }
 
     /**
      * @return \EasyDingTalk\Role\Client
-     *
-     * @throws \yii\base\InvalidConfigException
      */
-    public function getRole(array $options = [])
+    public function getRole()
     {
-        return $this->getApp($options)->role;
+        return $this->getApp()->role;
     }
 
     /**
      * @return \EasyDingTalk\Contact\Client
-     *
-     * @throws \yii\base\InvalidConfigException
      */
-    public function getContact(array $options = [])
+    public function getContact()
     {
-        return $this->getApp($options)->contact;
+        return $this->getApp()->contact;
     }
 
     /**
      * @return \EasyDingTalk\Calendar\Client
-     *
-     * @throws \yii\base\InvalidConfigException
      */
-    public function getCalendar(array $options = [])
+    public function getCalendar()
     {
-        return $this->getApp($options)->calendar;
+        return $this->getApp()->calendar;
     }
 
     /**
      * @return \EasyDingTalk\Attendance\Client
-     *
-     * @throws \yii\base\InvalidConfigException
      */
-    public function getAttendance(array $options = [])
+    public function getAttendance()
     {
-        return $this->getApp($options)->attendance;
+        return $this->getApp()->attendance;
     }
 
     /**
      * @return \EasyDingTalk\Checkin\Client
-     *
-     * @throws \yii\base\InvalidConfigException
      */
-    public function getCheckin(array $options = [])
+    public function getCheckin()
     {
-        return $this->getApp($options)->checkin;
+        return $this->getApp()->checkin;
     }
 
     /**
      * @return \EasyDingTalk\Report\Client
-     *
-     * @throws \yii\base\InvalidConfigException
      */
-    public function getReport(array $options = [])
+    public function getReport()
     {
-        return $this->getApp($options)->report;
+        return $this->getApp()->report;
     }
 
     /**
      * @return \EasyDingTalk\Blackboard\Client
-     *
-     * @throws \yii\base\InvalidConfigException
      */
-    public function getBlackboard(array $options = [])
+    public function getBlackboard()
     {
-        return $this->getApp($options)->blackboard;
+        return $this->getApp()->blackboard;
     }
 
     /**
      * @return \EasyDingTalk\Microapp\Client
-     *
-     * @throws \yii\base\InvalidConfigException
      */
-    public function getMicroapp(array $options = [])
+    public function getMicroapp()
     {
-        return $this->getApp($options)->microapp;
+        return $this->getApp()->microapp;
     }
 
     /**
      * @return \EasyDingTalk\Health\Client
-     *
-     * @throws \yii\base\InvalidConfigException
      */
-    public function getHealth(array $options = [])
+    public function getHealth()
     {
-        return $this->getApp($options)->health;
+        return $this->getApp()->health;
     }
 
     /**
      * @return \EasyDingTalk\Callback\Client
-     *
-     * @throws \yii\base\InvalidConfigException
      */
-    public function getCallback(array $options = [])
+    public function getCallback()
     {
-        return $this->getApp($options)->callback;
+        return $this->getApp()->callback;
     }
 
     /**
      * @return \EasyDingTalk\Kernel\Server
-     *
-     * @throws \yii\base\InvalidConfigException
      */
-    public function getServer(array $options = [])
+    public function getServer()
     {
-        return $this->getApp($options)->server;
+        return $this->getApp()->server;
     }
 }
